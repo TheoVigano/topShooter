@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpft2ji6sm6ow"]
+
+[ext_resource type="Script" uid="uid://bl1i6dr3qmnsp" path="res://scenes/player/player.gd" id="1_8afob"]
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(27, 28)
+script = ExtResource("1_8afob")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(21, 14)
+polygon = PackedVector2Array(-2.38374, 6.36862, -34.227, -29.7701, 28.0905, -5.93218, 63.6113, 7.65537, 8.0708, 26.478, -32.5312, 40.238)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(33, 21)
+scale = Vector2(3.69318, 2.47396)
+polygon = PackedVector2Array(-4.10308, -0.595787, -11.9138, 13.3389, 14.08, 0.404209, -12.4554, -14.9558)
