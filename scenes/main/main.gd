@@ -1,0 +1,20 @@
+extends Node2D
+
+var enemy_scene = preload("res://scenes/enemy/enemy.tscn")
+@onready var main: Node2D = $"."
+@onready var player: CharacterBody2D = $player
+
+func _ready() -> void:
+	pass 
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_timer_timeout() -> void:
+	var enemy = enemy_scene.instantiate()
+
+	while enemy.global_position.distance_squared_to(player.global_position) < 1000:
+		enemy.global_position.x = randi_range(0, get_viewport_rect().size.x)
+		enemy.global_position.y = randi_range(0, get_viewport_rect().size.y)
+
+	add_child(enemy)

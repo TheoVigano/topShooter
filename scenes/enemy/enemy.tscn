@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://6q0yamyjt0rl"]
+
+[ext_resource type="Script" uid="uid://byxmdss8t4ub3" path="res://scenes/enemy/enemy.gd" id="1_4a83h"]
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+position = Vector2(61, -37)
+rotation = 0.0218726
+scale = Vector2(3.68175, 4.30755)
+script = ExtResource("1_4a83h")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(9.87598, 14.3735)
+color = Color(0.486275, 0, 0, 1)
+offset = Vector2(1.12402, -2.3735)
+polygon = PackedVector2Array(-10, 10, -6, 15, 0, 10, 6, 15, 10, 10, 10, -4, 0, -11, -10, -4)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(11, 1, 21, 8, 21, 22, 17, 27, 11, 22, 5, 27, 1, 22, 1, 8)

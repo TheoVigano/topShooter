@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://6rpywicd5myi"]
+
+[ext_resource type="Script" uid="uid://dqb7qvl8o1oaf" path="res://scenes/bullet/bullet.gd" id="1_7c8un"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83itf"]
+radius = 7.02242
+
+[node name="bullet" type="Area2D"]
+z_index = -200
+position = Vector2(-0.675655, -0.135131)
+script = ExtResource("1_7c8un")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0.307462, 0.304311)
+scale = Vector2(0.709269, 0.695689)
+polygon = PackedVector2Array(11, 1, 8.44121, 1.47492, 5.98267, 2.42051, 3.83934, 4.12258, 2.26335, 6.13984, 1.31776, 8.47229, 1.05755, 10.9851, 1.35723, 13.4724, 2.37802, 16.0973, 3.9335, 18.1631, 5.99937, 19.67, 8.38121, 20.6665, 10.9575, 20.9824, 13.558, 20.6665, 15.9885, 19.6214, 18.0301, 18.0902, 19.7557, 15.9271, 20.6792, 13.5453, 21.0438, 10.9447, 20.7035, 8.39277, 19.6341, 5.93802, 18.0301, 3.89645, 15.9642, 2.34097, 13.6067, 1.29588)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.06332, 7.8955)
+shape = SubResource("CircleShape2D_83itf")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(8.8032, 7.47599)
+scale = Vector2(0.807903, 0.724695)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

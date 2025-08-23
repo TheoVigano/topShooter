@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dthjtdbgapehk"]
+
+[sub_resource type="Curve" id="Curve_j7odt"]
+_data = [Vector2(0, 0.984436), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="explosion" type="CPUParticles2D"]
+emitting = false
+amount = 50
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.87
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_j7odt")
+anim_speed_min = 100.0
+anim_speed_max = 150.0
